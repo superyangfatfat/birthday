@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>计算生日</title>
+</head>
+<body>
+ <script>
+	var year=parseInt(prompt('请输入出生年份'));
+	var month=parseInt(prompt('请输入出生月份'));
+	var date=parseInt(prompt('请输入出生日期'));
+	var temp=new Date(year,month-1,date);
+	console.log(temp);
+	var first=new Date(year,0,1);
+	var birthdaydays=temp.getTime();
+	var firstdays=first.getTime();
+	var a=Math.ceil((birthdaydays-firstdays)/(24*60*60*1000));
+	document.write(`你的生日是${year}年的第${a+1}天`);
+	
+	// 
+	var m=parseInt(prompt('你的生日在几月份？'));
+	var d=parseInt(prompt('你的生日在几号？'));
+	var today=new Date();
+	var y=today.getFullYear();
+	var temp=new Date(y,m-1,d);
+	var a=temp.getTime();
+	var b=today.getTime();
+	console.log(y);
+	console.log(temp);
+	console.log(a);
+	console.log(b);
+	if(a<b){
+		var c=Math.floor((b-a)/(24*60*60*1000));
+		document.write(`你的生日已经过了${c}天`);
+	}else{
+		var e=Math.ceil((a-b)/(24*60*60*1000));
+		document.write(`距离你的生日还有${e}天`);
+	};
+</script>
+</body>
+</html>
